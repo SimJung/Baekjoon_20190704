@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\14000~">
+      <UniqueIdentifier>{75352a76-6cd5-45ca-b5de-6701c6f7088c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\1000~">
+      <UniqueIdentifier>{dbd55f65-b561-44ad-8b73-70d110b8b188}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\2000~">
+      <UniqueIdentifier>{42aa66a0-9662-4917-8865-e1011432924c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\3000~">
+      <UniqueIdentifier>{8ffb3ba4-fcc5-4d5c-a79b-dcdd3a70be70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\4000~">
+      <UniqueIdentifier>{8be455ab-e8d0-48aa-957d-53712dfb7f84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\5000~">
+      <UniqueIdentifier>{7e62500d-12fc-4616-acfb-0619aff295ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\6000~">
+      <UniqueIdentifier>{7c26dfcb-c553-4f7e-9b56-81250f2ce2b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\7000~">
+      <UniqueIdentifier>{c4b27ff3-7bf9-4a8f-9340-a7803b5707ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\8000~">
+      <UniqueIdentifier>{1a9400a2-d1e4-4d8c-8ef0-96607d742a1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\9000~">
+      <UniqueIdentifier>{5609bc0d-81f0-4e08-b834-ad11757bab09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\10000~">
+      <UniqueIdentifier>{b305b0fb-bfac-4fa7-bb8a-1c14c6b39401}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\11000~">
+      <UniqueIdentifier>{0c072c83-78cb-414f-a075-d3b74be7aa9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\15000~">
+      <UniqueIdentifier>{2460c4fc-8d46-492c-8f35-6da3b6e4bfdb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\16000~">
+      <UniqueIdentifier>{e939e3e0-fc6a-41f4-9856-dc4d29a9413b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\17000~">
+      <UniqueIdentifier>{da6935db-6de3-4f4f-b789-a18d4c9cab29}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="basic.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="p1003.cpp">
+      <Filter>소스 파일\1000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p1011.cpp">
+      <Filter>소스 파일\1000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p1016.cpp">
+      <Filter>소스 파일\1000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p1018.cpp">
+      <Filter>소스 파일\1000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p1038.cpp">
+      <Filter>소스 파일\1000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p1065.cpp">
+      <Filter>소스 파일\1000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p1074.cpp">
+      <Filter>소스 파일\1000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p1152.cpp">
+      <Filter>소스 파일\1000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p1158Arr.cpp">
+      <Filter>소스 파일\1000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p1158LL.cpp">
+      <Filter>소스 파일\1000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p1181.cpp">
+      <Filter>소스 파일\1000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p1260.cpp">
+      <Filter>소스 파일\1000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p1316.cpp">
+      <Filter>소스 파일\1000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p1330.cpp">
+      <Filter>소스 파일\1000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p1406.cpp">
+      <Filter>소스 파일\1000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p1463.cpp">
+      <Filter>소스 파일\1000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p1475.cpp">
+      <Filter>소스 파일\1000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p1476.cpp">
+      <Filter>소스 파일\1000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p1546.cpp">
+      <Filter>소스 파일\1000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p1874.cpp">
+      <Filter>소스 파일\1000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p1929.cpp">
+      <Filter>소스 파일\1000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p1931.cpp">
+      <Filter>소스 파일\1000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p1932.cpp">
+      <Filter>소스 파일\1000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p1966.cpp">
+      <Filter>소스 파일\1000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p1978.cpp">
+      <Filter>소스 파일\1000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p2108.cpp">
+      <Filter>소스 파일\2000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p2178.cpp">
+      <Filter>소스 파일\2000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p2231.cpp">
+      <Filter>소스 파일\2000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p2292.cpp">
+      <Filter>소스 파일\2000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p2407.cpp">
+      <Filter>소스 파일\2000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p2440.cpp">
+      <Filter>소스 파일\2000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p2441.cpp">
+      <Filter>소스 파일\2000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p2447.cpp">
+      <Filter>소스 파일\2000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p2448.cpp">
+      <Filter>소스 파일\2000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p2504.cpp">
+      <Filter>소스 파일\2000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p2530.cpp">
+      <Filter>소스 파일\2000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p2558.cpp">
+      <Filter>소스 파일\2000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p2562.cpp">
+      <Filter>소스 파일\2000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p2581.cpp">
+      <Filter>소스 파일\2000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p2588.cpp">
+      <Filter>소스 파일\2000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p2675.cpp">
+      <Filter>소스 파일\2000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p2751.cpp">
+      <Filter>소스 파일\2000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p2753.cpp">
+      <Filter>소스 파일\2000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p2839.cpp">
+      <Filter>소스 파일\2000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p2869.cpp">
+      <Filter>소스 파일\2000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p2884.cpp">
+      <Filter>소스 파일\2000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p2902.cpp">
+      <Filter>소스 파일\2000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p2908.cpp">
+      <Filter>소스 파일\2000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p2920.cpp">
+      <Filter>소스 파일\2000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p2941.cpp">
+      <Filter>소스 파일\2000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p3052.cpp">
+      <Filter>소스 파일\3000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p4344.cpp">
+      <Filter>소스 파일\4000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p4673.cpp">
+      <Filter>소스 파일\4000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p4948.cpp">
+      <Filter>소스 파일\4000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p5585.cpp">
+      <Filter>소스 파일\5000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p5622.cpp">
+      <Filter>소스 파일\5000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p6064.cpp">
+      <Filter>소스 파일\6000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p7568.cpp">
+      <Filter>소스 파일\7000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p7576.cpp">
+      <Filter>소스 파일\7000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p7576예준.cpp">
+      <Filter>소스 파일\7000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p8393.cpp">
+      <Filter>소스 파일\8000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p9012.cpp">
+      <Filter>소스 파일\9000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p9020.cpp">
+      <Filter>소스 파일\9000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p9466.cpp">
+      <Filter>소스 파일\9000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p9489.cpp">
+      <Filter>소스 파일\9000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p10039.cpp">
+      <Filter>소스 파일\10000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p10250.cpp">
+      <Filter>소스 파일\10000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p10773.cpp">
+      <Filter>소스 파일\10000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p10809.cpp">
+      <Filter>소스 파일\10000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p10817.cpp">
+      <Filter>소스 파일\10000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p10818.cpp">
+      <Filter>소스 파일\10000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p10828.cpp">
+      <Filter>소스 파일\10000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p10845.cpp">
+      <Filter>소스 파일\10000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p10870.cpp">
+      <Filter>소스 파일\10000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p10871.cpp">
+      <Filter>소스 파일\10000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p10872.cpp">
+      <Filter>소스 파일\10000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p10950.cpp">
+      <Filter>소스 파일\10000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p10951.cpp">
+      <Filter>소스 파일\10000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p10952.cpp">
+      <Filter>소스 파일\10000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p10989.cpp">
+      <Filter>소스 파일\10000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p11021.cpp">
+      <Filter>소스 파일\11000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p11022.cpp">
+      <Filter>소스 파일\11000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p11047.cpp">
+      <Filter>소스 파일\11000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p11053.cpp">
+      <Filter>소스 파일\11000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p11365.cpp">
+      <Filter>소스 파일\11000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p11399.cpp">
+      <Filter>소스 파일\11000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p11650.cpp">
+      <Filter>소스 파일\11000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p11651.cpp">
+      <Filter>소스 파일\11000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p11654.cpp">
+      <Filter>소스 파일\11000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p11720.cpp">
+      <Filter>소스 파일\11000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p11721.cpp">
+      <Filter>소스 파일\11000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p11726.cpp">
+      <Filter>소스 파일\11000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p11729.cpp">
+      <Filter>소스 파일\11000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p14502.cpp">
+      <Filter>소스 파일\14000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p15552.cpp">
+      <Filter>소스 파일\15000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p15596.cpp">
+      <Filter>소스 파일\15000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p15686.cpp">
+      <Filter>소스 파일\15000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p15780.cpp">
+      <Filter>소스 파일\15000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p15781.cpp">
+      <Filter>소스 파일\15000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p15783.cpp">
+      <Filter>소스 파일\15000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p15784.cpp">
+      <Filter>소스 파일\15000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p15786.cpp">
+      <Filter>소스 파일\15000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p15787.cpp">
+      <Filter>소스 파일\15000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p15788.cpp">
+      <Filter>소스 파일\15000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p15789.cpp">
+      <Filter>소스 파일\15000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p15791.cpp">
+      <Filter>소스 파일\15000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p16235.cpp">
+      <Filter>소스 파일\16000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p17210.cpp">
+      <Filter>소스 파일\17000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p17211.cpp">
+      <Filter>소스 파일\17000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p17212.cpp">
+      <Filter>소스 파일\17000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p17215.cpp">
+      <Filter>소스 파일\17000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p17216.cpp">
+      <Filter>소스 파일\17000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p1712.cpp">
+      <Filter>소스 파일\1000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p3009.cpp">
+      <Filter>소스 파일\3000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p4153.cpp">
+      <Filter>소스 파일\4000~</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
