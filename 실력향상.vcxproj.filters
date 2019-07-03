@@ -408,5 +408,14 @@
     <ClCompile Include="p4153.cpp">
       <Filter>소스 파일\4000~</Filter>
     </ClCompile>
+    <ClCompile Include="p3053.cpp">
+      <Filter>소스 파일\3000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p2798.cpp">
+      <Filter>소스 파일\2000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p1436.cpp">
+      <Filter>소스 파일\1000~</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
