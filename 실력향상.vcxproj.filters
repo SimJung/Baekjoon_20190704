@@ -417,5 +417,41 @@
     <ClCompile Include="p1436.cpp">
       <Filter>소스 파일\1000~</Filter>
     </ClCompile>
+    <ClCompile Include="p1107.cpp">
+      <Filter>소스 파일\1000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p10814.cpp">
+      <Filter>소스 파일\10000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p2748.cpp">
+      <Filter>소스 파일\2000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p1904.cpp">
+      <Filter>소스 파일\1000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p9461.cpp">
+      <Filter>소스 파일\9000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p2579.cpp">
+      <Filter>소스 파일\2000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p10844.cpp">
+      <Filter>소스 파일\10000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p2156.cpp">
+      <Filter>소스 파일\2000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p11054.cpp">
+      <Filter>소스 파일\11000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p2566.cpp">
+      <Filter>소스 파일\2000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p11723.cpp">
+      <Filter>소스 파일\11000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p1005.cpp">
+      <Filter>소스 파일\1000~</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
