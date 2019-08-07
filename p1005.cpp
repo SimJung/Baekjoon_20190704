@@ -12,7 +12,7 @@ int time[1001];
 vector<int> v[1001];
 int id[1001] = { 0, };
 
-void topology()
+int topology()
 {
 	queue<int> temp;
 	int nowl = 0;
@@ -28,8 +28,9 @@ void topology()
 		temp.pop();
 		result[nowl].push_back(num);
 
-		num = temp.front();
-		if(num)
+		int num2 = temp.front();
+		if (id[num2] != id[num])
+			nowl++;
 
 		for (int j = 0; j < v[num].size(); j++)
 		{
@@ -39,6 +40,7 @@ void topology()
 			}
 		}
 	}
+	return nowl;
 }
 
 int main()
@@ -70,10 +72,14 @@ int main()
 			v[x].push_back(y);
 			id[y]++;
 		}
-		topology();
-		for (int i = 1; i <= n; i++)
+		int h = topology();
+		for (int i = 0; i < h; i++)
 		{
-			cout << result[i] << '\n';
+			cout << i << '\n';
+			for (int j = 0; j < v[i].size(); j++)
+			{
+				cout<<result[i][j]
+			}
 		}
 	}
 	return 0;
