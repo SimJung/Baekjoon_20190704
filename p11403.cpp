@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 using namespace std;
 
 bool arr[101][101];
@@ -6,16 +7,14 @@ bool visit[101];
 bool answer[101][101];
 int t;
 
-void dfs(int i, int j)
+void dfs(int i)
 {
-	answer[i][j] = 1;
-	for (int k = 1; k <= t; k++)
+	for (int j = 1; j <= t; j++)
 	{
-		if (arr[j][k] && !visit[k])
+		if (arr[i][j] && !visit[j])
 		{
-			answer[i][k] = 1;
-			visit[k] = 1;
-			dfs(j, k);
+			visit[j] = 1;
+			dfs(j);
 		}
 	}
 }
@@ -26,31 +25,25 @@ int main()
 	cin.tie(NULL);
 	cout.tie(NULL);
 
-
 	cin >> t;
 	
-	bool n;
-
 	for (int i = 1; i <= t; i++)
 	{
 		for (int j = 1; j <= t; j++)
 		{
-			cin >> n;
-			if (n)
-				arr[i][j] = 1;
+			cin >> arr[i][j];
 		}
 	}
 
 	for (int i = 1; i <= t; i++)
 	{
+		dfs(i);
 		for (int j = 1; j <= t; j++)
 		{
-			if (arr[i][j] && !visit[j])
-			{
-				visit[j] = 1;
-				dfs(i, j);
-			}
+			if (visit[j] == 1)
+				answer[i][j] = 1;
 		}
+		memset(visit, 0, t+1);
 	}
 
 	for (int i = 1; i <= t; i++)
