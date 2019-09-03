@@ -29,6 +29,25 @@ void show(vector<long long> tr, int tree_size)
 	cout << '\n';
 }
 
+long long sum(vector<long long>& t, int node, int start, int end, int left, int right)
+{
+	if (left > end || right < start)
+		return 0;
+	if (left <= start && right >= end)
+		return t[node];
+	return sum(t, node * 2, start, (start + end) / 2, left, right) + sum(t, node * 2 + 1, (start + end) / 2 + 1, end, left, right);
+}
+
+long long update(vector<long long>& t, int node, int start, int end, int index, long long diff)
+{
+	if (index < start || index > end) return;
+	t[node] = t[node] + diff;
+	if (start != end) {
+		update(t, node * 2, start, (start + end) / 2, index, diff);
+		update(t, node * 2 + 1, (start + end) / 2 + 1, end, index, diff);
+	}
+}
+
 int main(void)
 {
 	cout << "구간 합의 범위를 정해줘 : ";
