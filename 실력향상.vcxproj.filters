@@ -498,5 +498,8 @@
     <ClCompile Include="SegmentTree.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="p2042.cpp">
+      <Filter>소스 파일\2000~</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
