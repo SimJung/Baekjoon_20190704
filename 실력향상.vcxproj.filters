@@ -58,6 +58,12 @@
     <Filter Include="소스 파일\17000~">
       <UniqueIdentifier>{da6935db-6de3-4f4f-b789-a18d4c9cab29}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Programmers">
+      <UniqueIdentifier>{6eeb044e-d5bf-44ac-8c7b-6e0dfeb6fefd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Kakao">
+      <UniqueIdentifier>{3194838b-ef9d-404d-9db5-7002e5de4cb6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="basic.cpp">
@@ -503,6 +509,33 @@
     </ClCompile>
     <ClCompile Include="programmers01.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="p42576.cpp">
+      <Filter>소스 파일\Programmers</Filter>
+    </ClCompile>
+    <ClCompile Include="p39376.cpp">
+      <Filter>소스 파일\Programmers</Filter>
+    </ClCompile>
+    <ClCompile Include="p01.cpp">
+      <Filter>소스 파일\Kakao</Filter>
+    </ClCompile>
+    <ClCompile Include="p02.cpp">
+      <Filter>소스 파일\Kakao</Filter>
+    </ClCompile>
+    <ClCompile Include="p04.cpp">
+      <Filter>소스 파일\Kakao</Filter>
+    </ClCompile>
+    <ClCompile Include="소스.cpp">
+      <Filter>소스 파일\Kakao</Filter>
+    </ClCompile>
+    <ClCompile Include="p03.cpp">
+      <Filter>소스 파일\Kakao</Filter>
+    </ClCompile>
+    <ClCompile Include="p06.cpp">
+      <Filter>소스 파일\Kakao</Filter>
+    </ClCompile>
+    <ClCompile Include="p3055.cpp">
+      <Filter>소스 파일\3000~</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
