@@ -25,6 +25,15 @@ void func_water(int x, int y)
 	}
 }
 
+void func_gosm(int x, int y)
+{
+	if ((m[x][y] == '.' || m[x][y] == 'D') && !visit_gosm[x][y])
+	{
+		visit_gosm[x][y] = 1;
+		g.push(make_pair(x, y));
+	}
+}
+
 int bfs()
 {
 
