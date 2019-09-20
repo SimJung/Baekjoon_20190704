@@ -573,7 +573,10 @@
     <ClCompile Include="p9935.cpp">
       <Filter>소스 파일\9000~</Filter>
     </ClCompile>
-    <ClCompile Include="p10815.cpp">
+    <ClCompile Include="p10815binary_search.cpp">
+      <Filter>소스 파일\10000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p10815set.cpp">
       <Filter>소스 파일\10000~</Filter>
     </ClCompile>
   </ItemGroup>
