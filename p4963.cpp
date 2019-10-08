@@ -1,8 +1,29 @@
 #include <iostream>
+#include <cstring>
 using namespace std;
 
 bool earth[51][51];
+bool visit[51][51];
 int num = 0;
+int w, h;
+
+int a1[8] = { -1, -1, -1, 0, 0, 1, 1, 1 };
+int a2[8] = { -1, 0, 1, -1, 1, -1, 0, 1 };
+void dfs(int i, int j)
+{
+	
+	if (earth[i][j] && !visit[i][j])
+	{
+		visit[i][j] = 1;
+		for (int k = 0; k < 8; k++)
+		{
+			if (i + a1[k] >= 0 && i + a1[k] < h && j + a2[k] >= 0 && j + a2[k] < w)
+			{
+				dfs(i + a1[k], j + a2[k]);
+			}
+		}
+	}
+}
 
 int main()
 {
@@ -10,11 +31,13 @@ int main()
 	cin.tie(NULL);
 	cout.tie(NULL);
 
-	int w, h;
+	
 	
 	while (cin >> w >> h)
 	{
 		num = 0;
+		for (int i = 0; i < h; i++)
+			memset(visit[i], 0, w);
 		if (w == h && h == 0)
 			return 0;
 		for (int i = 0; i < h; i++)
@@ -22,24 +45,20 @@ int main()
 			for (int j = 0; j < w; j++)
 			{
 				cin >> earth[i][j];
-				if (earth[i][j])
+			}
+		}
+		for (int i = 0; i < h; i++)
+		{
+			for (int j = 0; j < w; j++)
+			{
+				if (earth[i][j] && !visit[i][j])
 				{
-					bool i1=false, i2=false, i3=false, i4 = false;
-					if (i >= 1 && earth[i - 1][j])
-						i1 = true;
-					if (j >= 1 && earth[i][j-1])
-						i2 = true;
-					if ((i >= 1 && j >= 1) && earth[i-1][j - 1])
-						i3 = true;
-					if ((i >= 1 && j < w - 1) && earth[i - 1][j + 1])
-						i4 = true;
-
-					if (!i1 && !i2 && !i3 && !i4)
-						num++;
+					num++;
+					dfs(i, j);
 				}
 			}
 		}
-		cout << num << "\n\n";
+		cout << num << '\n';
 	}
 	return 0;
 }
