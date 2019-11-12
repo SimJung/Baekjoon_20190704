@@ -7,10 +7,11 @@ using namespace std;
 
 bool arr[16][16];
 bool arr2[16][16];
-bool visit[16][16];
 
 int n, m, d, max_cnt, cnt;
+int x[3];
 queue<PI> q;
+queue<PI> killList;
 
 bool getVal(bool a[][16], PI p)
 {
@@ -27,22 +28,13 @@ int getDist(PI target, PI origin)
 	return abs(target.first - origin.first) + abs(target.second - origin.second);
 }
 
-void chkPush(PI a, PI t)
-{
-	if (getDist(a, t) <= d && !getVal(visit, t))
-	{
-		setVal(visit, t, true);
-		q.push(t);
-	}
-}
-
 void show(bool a[][16])
 {
 	for (int i = 0; i < n; i++)
 	{
-		for (int j = 1; j <= n; j++)
+		for (int j = 1; j <= m; j++)
 		{
-			cout << a[i][j]<<' ';
+			cout << a[i][j] << ' ';
 		}
 		cout << '\n';
 	}
@@ -51,24 +43,50 @@ void show(bool a[][16])
 PI getTarget(PI a)
 {
 	PI ret = make_pair(-1, -1);
-	
+
 	q.push(make_pair(a.first - 1, a.second));
 
 	while (!q.empty())
 	{
+		if (getDist(q.front(), a) > d || q.size() > 1000)
+		{
+			while (!q.empty())
+				q.pop();
+			break;
+		}
 		if (getVal(arr, q.front()))
 		{
 			ret = q.front();
-			q.pop();
+			while (!q.empty())
+				q.pop();
 			break;
 		}
 		else {
-			PI p1 = make_pair(q.front().first, q.front().second - 1);
-			PI p2 = make_pair(q.front().first - 1, q.front().second);
-			PI p3 = make_pair(q.front().first, q.front().second + 1);
+
+			bool chkP[3] = { false, false, false };
+			PI p1;
+			if (q.front().second > 1) {
+				p1 = make_pair(q.front().first, q.front().second - 1);
+				chkP[0] = true;
+			}
+			PI p2;
+			if (q.front().first > 0) {
+				p2 = make_pair(q.front().first - 1, q.front().second);
+				chkP[1] = true;
+			}
+			PI p3;
+			if (q.front().second < m) {
+				p3 = make_pair(q.front().first, q.front().second + 1);
+				chkP[2] = true;
+			}
 			q.pop();
 
-			chkPush(a, p1); chkPush(a, p2); chkPush(a, p3);
+			if (chkP[0])
+				q.push(p1);
+			if (chkP[1])
+				q.push(p2);
+			if (chkP[2])
+				q.push(p3);
 		}
 	}
 	return ret;
@@ -79,8 +97,7 @@ void killMob(int y, int x)
 	PI t = getTarget(make_pair(y, x));
 	if (t.first != -1 && getVal(arr, t) == 1)
 	{
-		cnt++;
-		setVal(arr, t, 0);
+		killList.push(t);
 	}
 }
 
@@ -88,7 +105,7 @@ void cpArr()
 {
 	for (int i = 0; i < n; i++)
 	{
-		for (int j = 1; j <= n; j++)
+		for (int j = 1; j <= m; j++)
 		{
 			arr[i][j] = arr2[i][j];
 		}
@@ -101,7 +118,7 @@ int main()
 	cin.tie(NULL);
 	cout.tie(NULL);
 
-	cin >> n>>m>>d;
+	cin >> n >> m >> d;
 	for (int i = 0; i < n; i++)
 	{
 		for (int j = 1; j <= m; j++)
@@ -113,22 +130,43 @@ int main()
 		{
 			for (int k = j + 1; k <= m; k++)
 			{
+				//cout << i << ' ' << j << ' ' << k << '\n';
 				cnt = 0;
 				cpArr();
-				for (int l = 0; l < n; l++)
-				{
-					memset(visit[l], 0, m+1);
-				}
 				for (int ay = n; ay > 0; ay--)
 				{
 					killMob(ay, i);
 					killMob(ay, j);
 					killMob(ay, k);
+					while (!killList.empty())
+					{
+						if (getVal(arr, killList.front()))
+						{
+							setVal(arr, killList.front(), 0);
+							cnt++;
+						}
+						killList.pop();
+					}
+
+					/*
+					cout << '\n';
+					show(arr);
+					cout << '\n';
+					*/
 				}
-				max_cnt = (cnt > max_cnt) ? cnt : max_cnt;
+				if (max_cnt < cnt) {
+					max_cnt = cnt;
+					x[0] = i; x[1] = j; x[2] = k;
+				}
 			}
 		}
 	}
+
+	/*
+	for (int i = 0; i < 3; i++)
+		cout << x[i] << ' ';
+	cout << '\n';
+	*/
 
 	cout << max_cnt << '\n';
 	return 0;
