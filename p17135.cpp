@@ -7,6 +7,7 @@ using namespace std;
 
 bool arr[16][16];
 bool arr2[16][16];
+bool visit[16][16];
 
 int n, m, d, max_cnt, cnt;
 int x[3];
@@ -28,27 +29,16 @@ int getDist(PI target, PI origin)
 	return abs(target.first - origin.first) + abs(target.second - origin.second);
 }
 
-void show(bool a[][16])
-{
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 1; j <= m; j++)
-		{
-			cout << a[i][j] << ' ';
-		}
-		cout << '\n';
-	}
-}
-
 PI getTarget(PI a)
 {
 	PI ret = make_pair(-1, -1);
 
 	q.push(make_pair(a.first - 1, a.second));
+	setVal(visit, a, 1);
 
 	while (!q.empty())
 	{
-		if (getDist(q.front(), a) > d || q.size() > 1000)
+		if (getDist(q.front(), a) > d)
 		{
 			while (!q.empty())
 				q.pop();
@@ -67,28 +57,39 @@ PI getTarget(PI a)
 			PI p1;
 			if (q.front().second > 1) {
 				p1 = make_pair(q.front().first, q.front().second - 1);
+				
 				chkP[0] = true;
 			}
 			PI p2;
 			if (q.front().first > 0) {
 				p2 = make_pair(q.front().first - 1, q.front().second);
+				
 				chkP[1] = true;
 			}
 			PI p3;
 			if (q.front().second < m) {
 				p3 = make_pair(q.front().first, q.front().second + 1);
+				
 				chkP[2] = true;
 			}
 			q.pop();
 
-			if (chkP[0])
+			if (chkP[0] && !getVal(visit, p1)){
 				q.push(p1);
-			if (chkP[1])
+				setVal(visit, p1, 1);
+			}
+			if (chkP[1] && !getVal(visit, p2)) {
 				q.push(p2);
-			if (chkP[2])
+				setVal(visit, p2, 1);
+			}
+			if (chkP[2] && !getVal(visit, p3)) {
 				q.push(p3);
+				setVal(visit, p3, 1);
+			}
 		}
 	}
+	for (int i = 0; i < n; i++)
+		memset(visit[i], 0, m+1);
 	return ret;
 }
 
@@ -98,17 +99,6 @@ void killMob(int y, int x)
 	if (t.first != -1 && getVal(arr, t) == 1)
 	{
 		killList.push(t);
-	}
-}
-
-void cpArr()
-{
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 1; j <= m; j++)
-		{
-			arr[i][j] = arr2[i][j];
-		}
 	}
 }
 
@@ -130,9 +120,8 @@ int main()
 		{
 			for (int k = j + 1; k <= m; k++)
 			{
-				//cout << i << ' ' << j << ' ' << k << '\n';
 				cnt = 0;
-				cpArr();
+				memcpy(arr, arr2, sizeof(arr));
 				for (int ay = n; ay > 0; ay--)
 				{
 					killMob(ay, i);
@@ -147,12 +136,6 @@ int main()
 						}
 						killList.pop();
 					}
-
-					/*
-					cout << '\n';
-					show(arr);
-					cout << '\n';
-					*/
 				}
 				if (max_cnt < cnt) {
 					max_cnt = cnt;
@@ -161,12 +144,6 @@ int main()
 			}
 		}
 	}
-
-	/*
-	for (int i = 0; i < 3; i++)
-		cout << x[i] << ' ';
-	cout << '\n';
-	*/
 
 	cout << max_cnt << '\n';
 	return 0;
