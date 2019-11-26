@@ -64,6 +64,9 @@
     <Filter Include="소스 파일\Kakao">
       <UniqueIdentifier>{3194838b-ef9d-404d-9db5-7002e5de4cb6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\18000~">
+      <UniqueIdentifier>{17dcbea3-7a3b-4e8b-b564-6c661a216c1b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="basic.cpp">
@@ -623,6 +626,9 @@
     </ClCompile>
     <ClCompile Include="p1197.cpp">
       <Filter>소스 파일\1000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p18108.cpp">
+      <Filter>소스 파일\18000~</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
