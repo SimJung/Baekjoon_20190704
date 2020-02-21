@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int n, max, min;
+int n, maxx, minn;
 int arr[12];
 int cnt[5];
 
@@ -20,10 +20,10 @@ int calc(int idx, int n, int i) {
 }
 void backtrack(int idx, int num) {
 	if (idx == n) {
-		if (num > max)
-			max = num;
-		if (n < min)
-			min = num;
+		if (num > maxx)
+			maxx = num;
+		if (num < minn)
+			minn = num;
 	}
 	else {
 		for (int i = 1; i <= 4; i++) {
@@ -53,11 +53,11 @@ int main()
 		cin >> cnt[i];
 	}
 
-	max = 0;
-	min = 1000000001;
+	maxx = -1000000001;
+	minn = 1000000001;
 
 	backtrack(1, arr[0]);
 
-	cout << max << '\n' << min << '\n';
+	cout << maxx << '\n' << minn << '\n';
 	return 0;
 }
