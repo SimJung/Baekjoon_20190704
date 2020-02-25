@@ -666,5 +666,11 @@
     <ClCompile Include="p14889.cpp">
       <Filter>소스 파일\14000~</Filter>
     </ClCompile>
+    <ClCompile Include="p825.cpp">
+      <Filter>소스 파일\Programmers</Filter>
+    </ClCompile>
+    <ClCompile Include="p2569.cpp">
+      <Filter>소스 파일\Programmers</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
