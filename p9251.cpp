@@ -2,10 +2,22 @@
 #include <string>
 #include <queue>
 #include <algorithm>
+#include <vector>
+#include <iomanip>
 using namespace std;
-
-pair<int, int> dp[1001];
 int ans = 0;
+string str1, str2;
+int dp[1001][1001];
+
+void show() {
+	for (int i = 0; i <= str1.length(); i++)
+	{
+		for (int j = 0; j <= str2.length(); j++) {
+			cout << dp[i][j] << ' ';
+		}
+		cout << '\n';
+	}
+}
 
 int main()
 {
@@ -13,33 +25,23 @@ int main()
 	cin.tie(NULL);
 	cout.tie(NULL);
 
-	string str1, str2;
-	int pos;
 
 	cin >> str1 >> str2;
 
-	for (int i = 0; i < str1.length(); i++) {
-		string::iterator it;
-		for (it = str2.begin(); it != str2.end(); it++) {
-			it = find(it, str2.end(), str1[i]);
-			if (it == str2.end())
-				break;
-			pos = distance(str2.begin(), it);
+	int big1 = 0;
 
-			int dpval = 0;
-			for (int j = 0; j < pos; j++) {
-				if (dp[j].second < i+1 && dpval < dp[j].first) {
-					dpval = dp[j].first;
-				}
+	for (int i = 1; i <= str1.length(); i++) {
+		for (int j = 1; j <= str2.length(); j++) {
+			big1 = (dp[i][j - 1] > dp[i - 1][j]) ? dp[i][j - 1] : dp[i - 1][j];
+			if (str1[i-1] == str2[j-1]) {
+				dp[i][j] = dp[i-1][j-1] + 1;
 			}
-			dp[pos].first = dpval + 1;
-			dp[pos].second = i + 1;
-
-			if (ans < dp[pos].first)
-				ans = dp[pos].first;
+			else {
+				dp[i][j] = big1;
+			}
 		}
 	}
-	cout << ans << '\n';
+	cout << dp[str1.length()][str2.length()] << '\n';
 
 	return 0;
 }
