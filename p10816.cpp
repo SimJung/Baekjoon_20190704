@@ -1,5 +1,6 @@
 #include <iostream>
 #include <algorithm>
+#include <map>
 
 using namespace std;
 
@@ -12,14 +13,20 @@ int main()
 	cout.tie(NULL);
 
 	int t, num;
-	cin >> t;
+	map<int, int> m;
 
+	cin >> t;
 	while (t--) {
 		cin >> num;
-		arr[num]++;
+		m[num]++;
 	}
 
 	cin >> t;
+	while (t--) {
+		cin >> num;
+		cout << m[num] << ' ';
+	}
+	cout << '\n';
 
 	
 	return 0;
