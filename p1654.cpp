@@ -14,12 +14,13 @@ int main()
 
 	for (int i = 0; i < n; i++) {
 		cin >> arr[i];
-		r += arr[i];
+		if (arr[i] > r)
+			r = arr[i];
 	}
 
 
 	
-	while (l < r) {
+	while (l <= r) {
 		cnt = 0;
 		m = (l + r) / 2;
 		if (m == 0){
@@ -29,13 +30,7 @@ int main()
 
 		for (int i = 0; i < n; i++) {
 			cnt += arr[i] / m;
-			if (arr[i] < m)
-			{
-				cnt = 0;
-				break;
-			}
 		}
-
 		// 너무 길어!
 		if (cnt < k) {
 			r = m - 1;
@@ -46,6 +41,6 @@ int main()
 		}
 	}
 
-	cout << m << '\n';
+	cout << r << '\n';
 	return 0;
 }
