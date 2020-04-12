@@ -70,6 +70,9 @@
     <Filter Include="소스 파일\13000~">
       <UniqueIdentifier>{d7f505f0-c942-4696-8523-602c869d1b01}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\12000~">
+      <UniqueIdentifier>{d123bcb7-5785-4178-8bf3-27facbe8ae5a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="basic.cpp">
@@ -724,6 +727,12 @@
       <Filter>소스 파일\1000~</Filter>
     </ClCompile>
     <ClCompile Include="p2110.cpp">
+      <Filter>소스 파일\2000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p12865.cpp">
+      <Filter>소스 파일\12000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p2630.cpp">
       <Filter>소스 파일\2000~</Filter>
     </ClCompile>
   </ItemGroup>
