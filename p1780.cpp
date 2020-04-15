@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int arr[129][129];
+int arr[2188][2188];
 int squares_n1 = 0, squares_0 = 0, squares_1 = 0;
 
 void recur(int start_i, int start_j, int n) {
