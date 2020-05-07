@@ -27,6 +27,7 @@ int main()
 	}
 
 	*/
+
 	for (int i = 1; i <= t; i*=10) {
 		if (i * 10 <= t) {
 			len += 9 * i * temp++;
