@@ -760,7 +760,13 @@
       <Filter>소스 파일\1000~</Filter>
     </ClCompile>
     <ClCompile Include="p1717.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\1000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p4195.cpp">
+      <Filter>소스 파일\4000~</Filter>
+    </ClCompile>
+    <ClCompile Include="p1976.cpp">
+      <Filter>소스 파일\1000~</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
