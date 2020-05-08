@@ -11,32 +11,24 @@ string findRoot(string name) {
 		return name;
 	}
 	else{
-		return findRoot(parentMap[name]);
+		return parentMap[name] = findRoot(parentMap[name]);
 	}
 }
 
-void cntRoot(string name) {
-	if (parentMap[name] == name) {
-		return ;
-	}
-	else {
-		friendDeg[parentMap[name]] = friendDeg[parentMap[name]] < friendDeg[name] + 1 ? friendDeg[name]+1 : friendDeg[parentMap[name]];
-		return cntRoot(parentMap[name]);
-	}
-}
-
-void unionFriend(string a, string b) {
+int unionFriend(string a, string b) {
 	string ar = findRoot(a);
 	string br = findRoot(b);
-	cntRoot(a);
-	cntRoot(b);
 	if (ar > br) {
 		parentMap[ar] = br;
 		friendDeg[br] += friendDeg[ar];
+		friendDeg[ar] = 1;
+		return friendDeg[br];
 	}
-	else {
+	else if (ar < br){
 		parentMap[br] = ar;
 		friendDeg[ar] += friendDeg[br];
+		friendDeg[br] = 1;
+		return friendDeg[ar];
 	}
 }
 
@@ -66,10 +58,7 @@ int main()
 				parentMap[name2] = name2;
 				friendDeg[name2] = 1;
 			}
-			
-			unionFriend(name1, name2);
-
-			cout << friendDeg[findRoot(name1)] << '\n';
+			cout << unionFriend(name1, name2) << '\n';
 		}
 	}
 	return 0;
