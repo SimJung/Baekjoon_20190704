@@ -28,10 +28,6 @@ int main()
 	}
 	sort(v.begin(), v.end(), cmp);
 
-	for (int i = 0; i < n; i++) {
-		cout << v[i].first << ' ' << v[i].second << '\n';
-	}
-
 	prevEnd = v[0].second;
 	for (int i = 1; i < n; i++)
 	{
