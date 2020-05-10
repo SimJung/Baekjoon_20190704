@@ -1,8 +1,16 @@
 #include <iostream>
 #include <algorithm>
+#include <vector>
 using namespace std;
+#define pi pair<int, int>
 
-pair<int, int> arr[100001];
+int n;
+vector<pi> v;
+bool cmp(pi a, pi b) {
+	if(a.second != b.second)
+		return a.second < b.second;
+	return a.first < b.first;
+}
 
 int main()
 {
@@ -10,17 +18,28 @@ int main()
 	cin.tie(NULL);
 	cout.tie(NULL);
 
-	int t;
-	cin >> t;
+	int t_s, t_e, answer = 1, prevEnd = 0;
+	cin >> n;
 
-	for (int i = 0; i < t; i++)
+	for (int i = 0; i < n; i++)
 	{
-		cin >> arr[i].first >> arr[i].second;
+		cin >> t_s>>t_e;
+		v.push_back(make_pair(t_s, t_e));
 	}
-	sort(arr, arr + t);
+	sort(v.begin(), v.end(), cmp);
 
-	for (int i = 0; i < t; i++)
-		cout << arr[i].first << ' ' << arr[i].second << '\n';
+	for (int i = 0; i < n; i++) {
+		cout << v[i].first << ' ' << v[i].second << '\n';
+	}
 
+	prevEnd = v[0].second;
+	for (int i = 1; i < n; i++)
+	{
+		if (v[i].first >= prevEnd) {
+			answer++;
+			prevEnd = v[i].second;
+		}
+	}
+	cout << answer << '\n';
 	return 0;
 }
