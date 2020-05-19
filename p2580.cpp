@@ -1,15 +1,11 @@
 #include <iostream>
+#include <vector>
 using namespace std;
+#define pi pair<int, int>
 
-int zeronum;
+vector<pi> zero_loc;
 int arr[10][10];
-
-//행[가로]
-bool row[10][10];
-//열[세로]
-bool col[10][10];
-//사각 영역
-bool sqr[10][10];
+bool chkEnd = false;
 
 void show() {
 	for (int i = 1; i <= 9; i++) {
@@ -20,47 +16,52 @@ void show() {
 	}
 }
 
-void showsqr() {
+bool h_ok(pi p, int n)
+{
 	for (int i = 1; i <= 9; i++) {
-		for (int j = 1; j <= 9; j++) {
-			cout << sqr[i][j] << ' ';
-		}
-		cout << '\n';
+		if (arr[p.first][i] == n)
+			return false;
 	}
+	return true;
+}
+
+bool v_ok(pi p, int n)
+{
+	for (int i = 1; i <= 9; i++) {
+		if (arr[i][p.second] == n)
+			return false;
+	}
+	return true;
+}
+
+bool s_ok(pi p, int n)
+{
+	for (int i = (p.first - 1)/3 * 3 + 1; i <= (p.first - 1)/3 * 3 + 3; i++) {
+		for (int j = (p.second - 1)/3 * 3 + 1; j <= (p.second - 1)/3 * 3 + 3; j++) {
+			if (arr[i][j] == n)
+				return false;
+		}
+	}
+	return true;
 }
 
 void sudoku(int n) {
+	pi p = zero_loc[n];
 	for (int i = 1; i <= 9; i++) {
-		for (int j = 1; j <= 9; j++) {
-			if (!arr[n][i] && !row[n][j] && !col[i][j] && !sqr[(n - 1) * 3 + i][j]) {
-				row[n][j] = 1;
-				col[i][j] = 1;
-				sqr[(n - 1) * 3 + i][j] = 1;
-				arr[n][i] = j;
-				zeronum--;
-
-				
-				cout <<zeronum<< "(" << n << "," << i << ") : " << j << '\n';
-				show();
-				cout << "\n";
-				
-
-				if (zeronum != 0)
-					sudoku(n + 1);
-				else
-					return;
-				if (zeronum == 0)
-					return;
-				else {
-					row[n][j] = 0;
-					col[i][j] = 0;
-					sqr[(n - 1) * 3 + i][j] = 0;
-					arr[n][i] = 0;
-					zeronum++;
-				}
+		if (h_ok(p, i) && v_ok(p, i) && s_ok(p, i)) {
+			arr[p.first][p.second] = i;
+			if (n + 1 == zero_loc.size()) {
+				chkEnd = true;
+				return;
 			}
+			else if (!chkEnd)
+				sudoku(n + 1);
 		}
+
+		if (chkEnd)
+			return;
 	}
+	arr[p.first][p.second] = 0;
 }
 
 int main()
@@ -69,20 +70,14 @@ int main()
 	cin.tie(NULL);
 	cout.tie(NULL);
 
-	int a, b;
 	for (int i = 1; i <= 9; i++) {
 		for (int j = 1; j <= 9; j++) {
 			cin >> arr[i][j];
-			row[i][arr[i][j]] = 1;
-			col[j][arr[i][j]] = 1;
-			a = ((i - 1) / 3)+1;
-			b = ((j - 1) / 3)+1;
-			sqr[(a - 1) * 3 + b][arr[i][j]] = 1;
 			if (arr[i][j] == 0)
-				zeronum++;
+				zero_loc.push_back(make_pair(i, j));
 		}
 	}
-	sudoku(1);
+	sudoku(0);
 
 	show();
 
