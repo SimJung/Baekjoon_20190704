@@ -1,15 +1,17 @@
 #include <iostream>
 #include <vector>
 #include <queue>
+#include <tuple>
 using namespace std;
 #define pi pair<int, int>
+#define ti tuple<int, int, int>
 #define INF 2100000000
 
 //first: 가중치, second: 도착지
-vector<pi> edges[20001];
+vector<ti> edges[20001];
 int dist[20001];
 bool visit[20001];
-priority_queue<int, vector<int>, less<int>> q;
+priority_queue<ti, vector<ti>, greater<ti>> q;
 int a, b, startP;
 
 int main()
@@ -33,11 +35,31 @@ int main()
 	int u, v, w;
 	for (int i = 0; i < b; i++) {
 		cin >> u >> v >> w;
-		edges[u].push_back(make_pair(w, v));
+		edges[u].push_back(make_tuple(w, u, v));
 	}
 
 	for (int i = 0; i < edges[startP].size(); i++) {
-		q.push()
+		q.push(edges[startP][i]);
+	}
+
+	while (!q.empty()) {
+		ti temp = q.top();
+		q.pop();
+		visit[get<2>(temp)] = true;
+		if (dist[get<1>(temp)] + get<0>(temp) < dist[get<2>(temp)])
+			dist[get<2>(temp)] = dist[get<1>(temp)] + get<0>(temp);
+		for (int i = 0; i < edges[get<2>(temp)].size(); i++) {
+			if (!visit[edges[get<2>(temp)][i].second]) {
+				q.push(edges[get<2>(temp)][i]);
+			}
+		}
+	}
+
+	for (int i = 1; i <= a; i++) {
+		if (dist[i] == INF)
+			cout << "INF\n";
+		else
+			cout << dist[i] << '\n';
 	}
 	return 0;
 }
