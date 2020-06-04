@@ -30,6 +30,9 @@ int unionFriend(string a, string b) {
 		friendDeg[br] = 1;
 		return friendDeg[ar];
 	}
+	else {
+		return friendDeg[ar];
+	}
 }
 
 int main()
