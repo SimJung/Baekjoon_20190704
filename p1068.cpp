@@ -1,24 +1,51 @@
 #include <iostream>
+#include <vector>
+#include <algorithm>
+#define pi pair<int, int>
 using namespace std;
 
-int arr[51];
 int nodeNum;
-int leafNum;
-int rootNum;
+int delNode;
 
-void getLeafNum(int idx) {
-	if (idx > nodeNum || arr[idx] == -1)
-		return;
+class Tree {
+private:
+	int val;
+	vector<Tree*> children;
+public:
+	Tree(int v) : val(v) {
+		children.clear();
+	}
 
-	if (arr[idx * 2] == 0 && arr[idx * 2 + 1] == 0) {
-		leafNum++;
-		return;
+	bool isLeaf() {
+		return children.empty();
 	}
-	else {
-		getLeafNum(idx * 2);
-		getLeafNum(idx * 2 + 1);
+
+	int getLeafNum() {
+		if (val == delNode)
+			return 0;
+
+		if (isLeaf() || (children.size() == 1 && children[0]->getVal() == delNode))
+			return 1;
+		else {
+			int sum = 0;
+			for (int i = 0; i < children.size(); i++) {
+				sum += children[i]->getLeafNum();
+			}
+			return sum;
+		}
 	}
-}
+
+	int getVal() {
+		return val;
+	}
+
+	void pushChild(Tree* t) {
+		children.push_back(t);
+	}
+};
+
+vector<Tree> v;
+int arr[51];
 
 int main()
 {
@@ -28,21 +55,27 @@ int main()
 
 	cin >> nodeNum;
 
-	for (int i = 1; i <= nodeNum; i++) {
+	for (int i = 0; i < nodeNum; i++) {
 		cin >> arr[i];
-		if (arr[i] == -1) {
-			rootNum = i;
-		}
-		arr[i]++;
+		Tree t(i);
+		v.push_back(t);
 	}
+	Tree* head = NULL;
+	for (int i = 0; i < nodeNum; i++) {
+		if (arr[i] == -1) {
+			head = &v[i];
+			continue;
+		}
 
-	int delNode;
+		for (int j = 0; j < nodeNum; j++) {
+			if (v[j].getVal() == arr[i]) {
+				v[j].pushChild(&v[i]);
+			}
+		}
+	}
 	cin >> delNode;
-	arr[delNode+1] = -1;
-
-	getLeafNum(1);
-
-	cout << leafNum << '\n';
 	
+	cout << head->getLeafNum() << '\n';
+
 	return 0;
 }
