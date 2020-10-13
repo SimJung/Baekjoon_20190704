@@ -921,5 +921,8 @@
     <ClCompile Include="p1543.cpp">
       <Filter>소스 파일\1000~</Filter>
     </ClCompile>
+    <ClCompile Include="p10867.cpp">
+      <Filter>소스 파일\10000~</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
